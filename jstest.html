@@ -1,0 +1,31 @@
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <input id="emoji_name">
+    <button onClick = 'addHero()'>Add</button>
+    <div id = 'emoji_list'></div>
+  </body>
+
+  <script>
+    var myemojis = [];
+    function addHero() {
+      var iHandle = document.getEllementById('emoji_name');
+      var dHandle = document.getEllementById('emoji_list');
+      var myHTML = '<ul>';
+      myemojis.push(iHandle.value);
+      for (i=0; i<myemojis.length;i++) {}
+
+        myHTML = myHTML +'<li>' + myemojis[i] + '</li>' ;
+
+      }
+      var myHTML = myHTML + '</ul>'
+      console.log(myHTML);
+      dHandle.innerHTML = myHTML;
+    }
+
+  </script>
+
+</html>
