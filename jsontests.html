@@ -2,6 +2,11 @@
 
   <head>
     <script src = 'covid.json'></script>
+    <script src ='https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js'></script>
+
+
+
+
   </head>
 
   <body>
@@ -10,15 +15,20 @@
     <button onclick="buildList()">Make List</button>
 
 
+
   </body>
 
   <script>
+    axios.get ('https://www.trackcorona.live/api/countries').then(response =>) {
+      buildList(response.data.data);
+
+    })
     coviddata.data.sort(function (a,b)
     {
       return b.dead-a.dead;
     });
   //build a list as its name shown
-    function buildList() {
+    function buildList(response) {
       var dHandle = document.getElementById('output');
       var myHTML = '<ul>';
       for (i = 0; i<coviddata.data.length; i++) {
